@@ -13,7 +13,7 @@ function Complaints() {
 
   const load = async () => {
     const student = JSON.parse(localStorage.getItem("student"));
-    const res = await fetch("http://localhost:3000/api/complaint/student", {
+    const res = await fetch("https://greenview-hostel-backend.onrender.com/api/complaint/student", {
       method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({ student: student._id }),
     });
     const data = await res.json();
@@ -27,7 +27,7 @@ function Complaints() {
     e.preventDefault();
     setLoading(true);
     const student = JSON.parse(localStorage.getItem("student"));
-    const res = await fetch("http://localhost:3000/api/complaint/register", {
+    const res = await fetch("https://greenview-hostel-backend.onrender.com/api/complaint/register", {
       method:"POST", headers:{"Content-Type":"application/json"},
       body: JSON.stringify({ student: student._id, hostel: student.hostel, title, description: desc, type }),
     });

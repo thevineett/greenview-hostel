@@ -9,7 +9,7 @@ export default function RequestAcc() {
 
   const register = async (e) => {
     e.preventDefault();
-    const res = await fetch("http://localhost:3000/api/request/register", {
+    const res = await fetch("https://greenview-hostel-backend.onrender.com/api/request/register", {
       method:"POST", headers:{"Content-Type":"application/json"},
       body: JSON.stringify({ cms_id: cms }),
     });

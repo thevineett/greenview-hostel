@@ -11,7 +11,7 @@ function Mess() {
 
   const loadRequests = async () => {
     const student = JSON.parse(localStorage.getItem("student"));
-    const res = await fetch("http://localhost:3000/api/messoff/count", {
+    const res = await fetch("https://greenview-hostel-backend.onrender.com/api/messoff/count", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ student: student._id }),
@@ -42,7 +42,7 @@ function Mess() {
     e.preventDefault();
     setLoading(true);
     const student = JSON.parse(localStorage.getItem("student"));
-    const res = await fetch("http://localhost:3000/api/Messoff/request", {
+    const res = await fetch("https://greenview-hostel-backend.onrender.com/api/Messoff/request", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

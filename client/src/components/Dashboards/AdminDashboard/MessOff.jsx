@@ -8,7 +8,7 @@ function MessOff() {
 
   const load = async () => {
     const hostel = JSON.parse(localStorage.getItem("hostel"));
-    const res = await fetch("http://localhost:3000/api/messoff/list", {
+    const res = await fetch("https://greenview-hostel-backend.onrender.com/api/messoff/list", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ hostel: hostel._id }),
@@ -38,7 +38,7 @@ function MessOff() {
   };
 
   const updateStatus = async (id, status) => {
-    const res = await fetch(`http://localhost:3000/api/messoff/update`, {
+    const res = await fetch(`https://greenview-hostel-backend.onrender.com/api/messoff/update`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id, status }),

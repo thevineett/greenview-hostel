@@ -10,7 +10,7 @@ function Attendance() {
 
   const load = async () => {
     setLoading(true);
-    const markedRes = await fetch("http://localhost:3000/api/attendance/getHostelAttendance", {
+    const markedRes = await fetch("https://greenview-hostel-backend.onrender.com/api/attendance/getHostelAttendance", {
       method:"POST", headers:{"Content-Type":"application/json"},
       body: JSON.stringify({ hostel: JSON.parse(localStorage.getItem("hostel"))._id }),
     });
@@ -29,7 +29,7 @@ function Attendance() {
   };
 
   const mark = async (id, isPresent) => {
-    const res = await fetch("http://localhost:3000/api/attendance/mark", {
+    const res = await fetch("https://greenview-hostel-backend.onrender.com/api/attendance/mark", {
       method:"POST", headers:{"Content-Type":"application/json"},
       body: JSON.stringify({ student: id, status: isPresent ? "present" : "absent" }),
     });

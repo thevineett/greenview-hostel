@@ -13,7 +13,7 @@ function Settings() {
   const changePassword = async (e) => {
     e.preventDefault();
     if (newPass !== confirm) { toast.error("Passwords do not match", { position:"top-right", theme:"light" }); return; }
-    const res = await fetch("http://localhost:3000/api/auth/change-password", {
+    const res = await fetch("https://greenview-hostel-backend.onrender.com/api/auth/change-password", {
       method:"POST", headers:{"Content-Type":"application/json"},
       body: JSON.stringify({ email: student.email, password: oldPass, newPassword: newPass }),
     });

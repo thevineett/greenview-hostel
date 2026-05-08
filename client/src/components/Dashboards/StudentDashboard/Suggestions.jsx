@@ -10,7 +10,7 @@ function Suggestions() {
 
   const load = async () => {
     const student = JSON.parse(localStorage.getItem("student"));
-    const res = await fetch("http://localhost:3000/api/suggestion/student", {
+    const res = await fetch("https://greenview-hostel-backend.onrender.com/api/suggestion/student", {
       method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({ student: student._id }),
     });
     const data = await res.json();
@@ -24,7 +24,7 @@ function Suggestions() {
     e.preventDefault();
     setLoading(true);
     const student = JSON.parse(localStorage.getItem("student"));
-    const res = await fetch("http://localhost:3000/api/suggestion/register", {
+    const res = await fetch("https://greenview-hostel-backend.onrender.com/api/suggestion/register", {
       method:"POST", headers:{"Content-Type":"application/json"},
       body: JSON.stringify({ student: student._id, hostel: student.hostel, title, description: desc }),
     });

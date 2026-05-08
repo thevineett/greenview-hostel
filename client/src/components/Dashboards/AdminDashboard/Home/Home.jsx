@@ -27,7 +27,7 @@ function Home() {
 
   const getComplaints = async () => {
     const hostelId = JSON.parse(localStorage.getItem("hostel"))._id;
-    const res = await fetch("http://localhost:3000/api/complaint/hostel", {
+    const res = await fetch("https://greenview-hostel-backend.onrender.com/api/complaint/hostel", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ hostel: hostelId }),
@@ -43,7 +43,7 @@ function Home() {
 
   const getSuggestions = async () => {
     const h = JSON.parse(localStorage.getItem("hostel"));
-    const res = await fetch("http://localhost:3000/api/suggestion/hostel", {
+    const res = await fetch("https://greenview-hostel-backend.onrender.com/api/suggestion/hostel", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ hostel: h._id }),

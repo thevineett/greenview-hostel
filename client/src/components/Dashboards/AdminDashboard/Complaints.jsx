@@ -14,7 +14,7 @@ function Complaints() {
 
   const load = async () => {
     const hostel = JSON.parse(localStorage.getItem("hostel"))._id;
-    const res = await fetch("http://localhost:3000/api/complaint/hostel", {
+    const res = await fetch("https://greenview-hostel-backend.onrender.com/api/complaint/hostel", {
       method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({ hostel }),
     });
     const data = await res.json();
@@ -28,7 +28,7 @@ function Complaints() {
   };
 
   const resolve = async (id) => {
-    const res = await fetch("http://localhost:3000/api/complaint/resolve/", {
+    const res = await fetch("https://greenview-hostel-backend.onrender.com/api/complaint/resolve/", {
       method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({ id }),
     });
     const data = await res.json();

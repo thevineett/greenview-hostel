@@ -9,7 +9,7 @@ function Attendance() {
 
   useEffect(() => {
     const student = JSON.parse(localStorage.getItem("student"));
-    fetch("http://localhost:3000/api/attendance/get", {
+    fetch("https://greenview-hostel-backend.onrender.com/api/attendance/get", {
       method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({ student: student._id }),
     }).then(r => r.json()).then(data => {
       if (data.success) {

@@ -16,14 +16,14 @@ export default function SignIn() {
   let login = async (event) => {
     event.preventDefault();
     setLoader(true);
-    const res = await fetch("http://localhost:3000/api/auth/login", {
+    const res = await fetch("https://greenview-hostel-backend.onrender.com/api/auth/login", {
       method:"POST", headers:{"Content-Type":"application/json"},
       body: JSON.stringify({ email, password: pass }),
     });
     const result = await res.json();
     if (result.success) {
       localStorage.setItem("token", result.data.token);
-      const sr = await fetch("http://localhost:3000/api/student/get-student", {
+      const sr = await fetch("https://greenview-hostel-backend.onrender.com/api/student/get-student", {
         method:"POST", headers:{"Content-Type":"application/json"},
         body: JSON.stringify({ isAdmin: result.data.user.isAdmin, token: result.data.token }),
       });

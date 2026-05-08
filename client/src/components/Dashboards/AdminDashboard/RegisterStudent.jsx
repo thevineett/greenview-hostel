@@ -30,7 +30,7 @@ function RegisterStudent() {
     const hostel = JSON.parse(localStorage.getItem("hostel")).name;
     try {
       const res = await fetch(
-        "http://localhost:3000/api/student/register-student",
+        "https://greenview-hostel-backend.onrender.com/api/student/register-student",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

@@ -5,7 +5,7 @@ function List() {
 
   useEffect(() => {
     const hostel = JSON.parse(localStorage.getItem("hostel"));
-    fetch("http://localhost:3000/api/messoff/list", {
+    fetch("https://greenview-hostel-backend.onrender.com/api/messoff/list", {
       method: "POST", headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ hostel: hostel._id }),
     }).then(r => r.json()).then(data => {

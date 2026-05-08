@@ -6,7 +6,7 @@ function Invoices() {
 
   useEffect(() => {
     const student = JSON.parse(localStorage.getItem("student"));
-    fetch("http://localhost:3000/api/invoice/student", {
+    fetch("https://greenview-hostel-backend.onrender.com/api/invoice/student", {
       method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({ student: student._id }),
     }).then(r => r.json()).then(data => {
       if (data.success) setInvoices(data.invoices.map(inv => ({

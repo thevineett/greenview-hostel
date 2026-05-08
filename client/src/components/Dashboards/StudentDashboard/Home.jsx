@@ -10,13 +10,13 @@ function Home() {
   const totalDays = new Date().getDate();
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/attendance/get", {
+    fetch("https://greenview-hostel-backend.onrender.com/api/attendance/get", {
       method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({ student: student._id }),
     }).then(r => r.json()).then(data => {
       if (data.success) setDaysOff(data.attendance.filter(d => d.status === "absent").length);
     });
 
-    fetch("http://localhost:3000/api/invoice/student", {
+    fetch("https://greenview-hostel-backend.onrender.com/api/invoice/student", {
       method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({ student: student._id }),
     }).then(r => r.json()).then(data => {
       if (data.success) setInvoices(data.invoices.filter(inv => inv.status === "pending").map(inv => ({

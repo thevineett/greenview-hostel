@@ -8,7 +8,7 @@ function Invoices() {
 
   const load = async () => {
     const hostel = JSON.parse(localStorage.getItem("hostel"));
-    const res = await fetch("http://localhost:3000/api/invoice/getbyid", {
+    const res = await fetch("https://greenview-hostel-backend.onrender.com/api/invoice/getbyid", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ hostel: hostel._id }),
@@ -34,7 +34,7 @@ function Invoices() {
 
   const generate = async () => {
     const hostel = JSON.parse(localStorage.getItem("hostel"));
-    const res = await fetch("http://localhost:3000/api/invoice/generate", {
+    const res = await fetch("https://greenview-hostel-backend.onrender.com/api/invoice/generate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ hostel: hostel._id }),
