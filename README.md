@@ -67,7 +67,7 @@ node seed_full.js
 | Role    | Email               | Password      |
 | ------- | ------------------- | ------------- |
 | Admin   | admin@greenview.com | admin1234     |
-| Student | aryan@greenview.com | Student@12345 |
+| Student | aryan@greenview.com | Student@1234 |
 
 ## 📁 Project Structure
 
